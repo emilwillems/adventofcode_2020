@@ -1,7 +1,6 @@
 INPUTFILE = "day1/input"
 
-puzzle_input = [int(l) for l in open(INPUTFILE, "r").readlines()]
-
+puzzle_input = set(int(l) for l in open(INPUTFILE, "r").readlines())
 
 def find_solution(puzzle):
     for pi1 in puzzle:
