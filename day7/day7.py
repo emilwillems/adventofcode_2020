@@ -4,10 +4,10 @@ BAG_TO_FIND = "shiny gold"
 
 puzzle = [l.rstrip() for l in open("day7/puzzle_input").readlines()]
 
-re_bags = re.compile(r"((\d+?) (.+?) bag[s]?[, ]?)+")
+re_bags = re.compile(r"((\d+?) (.+?) bag)+")
 bagsdict = dict()
 for line in puzzle:
-    (outside, inside) = line.rstrip('.').split(" bags contain ")
+    (outside, inside) = line.split(" bags contain ")
     inside_bags = dict()
     bags_inside = re_bags.findall(inside)
     for bag in bags_inside:

@@ -10,7 +10,6 @@ def get_seat_id(code: str):
 
     return (int_row * 8) + int_seat
 
-
 seat_ids = sorted([get_seat_id(s) for s in seats])
 print("part 1:", max(seat_ids))
 
