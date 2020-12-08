@@ -3,26 +3,6 @@ import os
 
 from aoc2020 import aocrunner
 
-def fix_code(program, index):
-    """ 
-    tries to fix the code by changing the first nop at or after index 
-    to a jmp or vice versa
-
-    returns a tuple with the 'fixed' code and the index of the changed
-    instruction
-    """
-    lines = program.splitlines()
-    for fixed, line in enumerate(lines):
-        if fixed >= index:
-            if line.startswith("nop"):
-                lines[fixed] = line.replace("nop", "jmp")
-                break
-            elif line.startswith("jmp"):
-                lines[fixed] = line.replace("jmp", "nop")
-                break
-
-    return ("\n".join(lines), fixed)
-
 def part1():
     print("PART 1 - Running until infinite loop detected:")
     runner.load_program(code)
